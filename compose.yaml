@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:18
+    container_name: kant-pg
+    environment:
+      POSTGRES_PASSWORD: admin1234
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
+    external: true
